@@ -14,7 +14,7 @@ OBJS		= $(addprefix $(OBJDIR), $(SRC:%.cpp=%.o))
 # =============================== COMPILER ================================== #
 
 CC			= c++
-FLAGS		= -Wall -Wextra -Werror -std=c++98
+FLAGS		= -Wall -Wextra -Werror -std=c++98 -g
 INCLUDES	= -Iincludes/
 RM			= rm -f
 MAKE		= make
