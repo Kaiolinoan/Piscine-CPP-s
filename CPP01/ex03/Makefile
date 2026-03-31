@@ -4,7 +4,7 @@ NAME		= weapon
 
 # ================================= FILES =================================== #
 
-SRC			= main.cpp HumanA.cpp HumanB.cpp
+SRC			= main.cpp Weapon.cpp HumanA.cpp HumanB.cpp 
 
 # ================================ OBJECTS =================================== #
 

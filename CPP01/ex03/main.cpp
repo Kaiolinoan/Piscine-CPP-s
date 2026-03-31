@@ -1,20 +1,6 @@
 #include "HumanA.hpp"
 #include "HumanB.hpp"
 
-Weapon::Weapon(std::string new_type) : type (new_type) {}
-
-Weapon::~Weapon() {}
-
-void Weapon::setType(const std::string& newType) 
-{
-    type = newType;
-}
-
-std::string Weapon::getType() const
-{
-    return (type);
-}
-
 int main(void)
 {
     {
@@ -33,5 +19,4 @@ int main(void)
         jim.attack();
     }
     return 0;
-
 }
