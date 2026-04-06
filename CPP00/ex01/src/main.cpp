@@ -66,7 +66,7 @@ void display_all_contacts(phonebook& pb)
     std::cout << std::setw(10) << "LAST NAME" << "|";
     std::cout << std::setw(10) << "NICK NAME" << "*" << std::endl;
     std::cout << "*********************************************" << std::endl;
-    for (int i = 0; i < pb.get_index(); i++)
+    for (int i = 0; i < pb.get_count(); i++)
     {
 		std::string fn = pb.get_contact_at(i).get_firstname();
     	std::string ln = pb.get_contact_at(i).get_lastname();
