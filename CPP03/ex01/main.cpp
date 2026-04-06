@@ -5,13 +5,14 @@ int main (void)
     ScavTrap a("ROBOT");
     ScavTrap b("BOT");
     ScavTrap c(a);
+    ClapTrap d("JARVIS");
     
+    d.attack("BOT");
     a.attack("IRON MAN");
     b.attack("IRON MAN");
     c.attack("IRON MAN");
 
     c = b;
-
     a.guardGate();
     b.guardGate();
     c.guardGate();
