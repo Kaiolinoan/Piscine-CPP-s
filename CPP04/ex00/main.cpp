@@ -10,14 +10,27 @@ int main ()
     const Animal* d = new Dog();
     const Animal* c = new Cat();
 
-    std::cout << d->getType() << " " << std::endl;
-    std::cout << c->getType() << " " << std::endl;
-    std::cout << Wc->getType() << " " << std::endl;
-    
+    std::cout << "Type: "<< meta->getType() << " | Sound: ";
     meta->makeSound();
+    std::cout << std::endl;
+
+    std::cout << "Type: "<< d->getType() << " | Sound: ";
     d->makeSound();
+    std::cout << std::endl;
+    
+    std::cout << "Type: "<< c->getType() << " | Sound: ";
     c->makeSound();
+    std::cout << std::endl;
+
+    std::cout << "Type: "<< Wa->getType() << " | Sound: ";
     Wa->makeSound();
+    std::cout << std::endl;
+    
+    std::cout << "Type: "<< Wc->getType() << " | Sound: ";
     Wc->makeSound();
+    std::cout << std::endl;
+    meta->makeSound();
+
+    c = d;
     return 0;
 }

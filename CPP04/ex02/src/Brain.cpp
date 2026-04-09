@@ -5,9 +5,11 @@ Brain::Brain()
     std::cout << "Brain default constructor called\n";
 }
 
-Brain::Brain(const Brain& other) : ideas(other.ideas)
+Brain::Brain(const Brain& other)
 {
     std::cout << "Brain copy constructor called\n";
+    for (size_t i = 0; i < 100; i++)
+        this->ideas[i] = other.ideas[i];
 }
 void Brain::setIdea(size_t index, std::string content)
 {
