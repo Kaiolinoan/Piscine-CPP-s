@@ -4,7 +4,7 @@
 
 int main ()
 {
-    // A_Animal animal;
+    A_Animal animal;
 
     A_Animal* array[10];
     for (size_t i = 0; i < 5; i++)
