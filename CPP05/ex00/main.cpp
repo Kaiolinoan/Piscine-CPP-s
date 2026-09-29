@@ -30,7 +30,7 @@ int main ()
     }
     catch (const std::exception& e)
     {
-        std::cout << e.what() << "\n";
+        std::cout << e.what();
     }
     std::cout << high;
     
@@ -45,7 +45,7 @@ int main ()
     }
     catch (const std::exception& e)
     {
-        std::cout << e.what() << "\n";
+        std::cout << e.what();
     }
     std::cout << low;
     
@@ -57,7 +57,7 @@ int main ()
     }
     catch (const std::exception& e)
     {
-        std::cout << e.what() << '\n';
+        std::cout << e.what();
     }
 
     try
@@ -66,6 +66,6 @@ int main ()
     }
     catch (const std::exception& e)
     {
-        std::cout << e.what() << '\n';
+        std::cout << e.what();
     }
 }

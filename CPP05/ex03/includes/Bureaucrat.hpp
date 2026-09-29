@@ -2,9 +2,6 @@
 #define BUREAUCRAT_HPP
 
 #include <iostream>
-#include "GradeTooLowException.hpp"
-#include "GradeTooHighException.hpp"
-#include "FormNotSignedException.hpp"
 #include "AForm.hpp"
 class Bureaucrat
 {
@@ -13,16 +10,34 @@ class Bureaucrat
     int _grade;
 
     public:
+
+    //CONSTRUCTOR AND DESTRUCTORS
     ~Bureaucrat();
     Bureaucrat(const Bureaucrat& other);
     Bureaucrat(const std::string& name, int grade);
+    
+    //OPERATORS
     Bureaucrat& operator=(const Bureaucrat& other);
     Bureaucrat& operator++();
     Bureaucrat& operator--();
-    std::string get_name()  const;
-    int         get_grade()  const;
+
+    //GETTERS
+    std::string getName()  const;
+    int         getGrade()  const;
+
+    //METHODS
     void        signForm(AForm &form);
     void        executeForm(AForm const & form) const;
+
+    //EXCEPTIONS
+    class GradeTooHighException : std::exception
+    {
+        virtual const char * what() const throw();
+    };
+    class GradeTooLowException : std::exception
+    {
+        virtual const char * what() const throw();
+    };
 };
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& object);

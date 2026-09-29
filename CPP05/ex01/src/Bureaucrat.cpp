@@ -17,14 +17,14 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)
 {
 	if (this != &other)
 	{
-		this->_grade = other.get_grade();
+		this->_grade = other.getGrade();
 	}
 	return (*this);
 };
 
-std::string Bureaucrat::get_name() const { return (this->_name); }
+std::string Bureaucrat::getName() const { return (this->_name); }
 
-int         Bureaucrat::get_grade() const { return (this->_grade); }
+int         Bureaucrat::getGrade() const { return (this->_grade); }
 
 Bureaucrat& Bureaucrat::operator++()
 {
@@ -49,15 +49,25 @@ void Bureaucrat::signForm(Form &form)
 	try
 	{
 		form.beSigned(*this);
-		std::cout << this->get_name() << " succesfully signed " << form.getName() << "\n";
+		std::cout << this->getName() << " succesfully signed " << form.getName() << "\n";
 	}
 	catch (std::exception &e)
 	{
-		std::cerr << this->get_name() << " couldn't sign " << form.getName() << " because " << e.what() << "\n";
+		std::cerr << this->getName() << " couldn't sign " << form.getName() << " because " << e.what() << "\n";
 	}
 }
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& object)
 {
-	out << object.get_name() << ", bureaucrat grade " << object.get_grade();
+	out << object.getName() << ", bureaucrat grade " << object.getGrade();
 	return (out);
+}
+
+const char * Bureaucrat::GradeTooHighException::what() const throw ()
+{
+	return ("Grade is too high");
+}
+
+const char * Bureaucrat::GradeTooLowException::what() const throw ()
+{
+	return ("Grade is too low");
 }

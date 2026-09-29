@@ -4,10 +4,8 @@ NAME		= intern
 
 # ================================= FILES =================================== #
 
-SRC			= main.cpp src/GradeTooHighException.cpp src/GradeTooLowException.cpp src/Bureaucrat.cpp src/AForm.cpp \
+SRC			= main.cpp src/Bureaucrat.cpp src/AForm.cpp src/Intern.cpp\
 			  src/ShrubberyCreationForm.cpp src/RobotomyRequestForm.cpp src/PresidentialPardonForm.cpp \
-			  src/FormNotSignedException.cpp src/Intern.cpp
-		
 
 # ================================ OBJECTS =================================== #
 

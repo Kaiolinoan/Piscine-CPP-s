@@ -4,7 +4,7 @@ NAME		= bureaucrat
 
 # ================================= FILES =================================== #
 
-SRC			= main.cpp src/GradeTooHighException.cpp src/GradeTooLowException.cpp src/Bureaucrat.cpp
+SRC			= main.cpp src/Bureaucrat.cpp
 
 # ================================ OBJECTS =================================== #
 

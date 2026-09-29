@@ -4,8 +4,8 @@ NAME		= alltogether
 
 # ================================= FILES =================================== #
 
-SRC			= main.cpp src/GradeTooHighException.cpp src/GradeTooLowException.cpp src/Bureaucrat.cpp src/AForm.cpp \
-			  src/ShrubberyCreationForm.cpp src/RobotomyRequestForm.cpp src/PresidentialPardonForm.cpp src/FormNotSignedException.cpp
+SRC			= main.cpp src/Bureaucrat.cpp src/AForm.cpp src/ShrubberyCreationForm.cpp \
+			  src/RobotomyRequestForm.cpp src/PresidentialPardonForm.cpp
 
 # ================================ OBJECTS =================================== #
 

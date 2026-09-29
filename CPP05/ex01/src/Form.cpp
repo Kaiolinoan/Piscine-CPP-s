@@ -28,7 +28,7 @@ void Form::beSigned(const Bureaucrat& bur)
 {
 	if (this->_signed)
 		return;
-	if (bur.get_grade() <= this->getSignGrade())
+	if (bur.getGrade() <= this->getSignGrade())
 		this->_signed = true;
 	else
 		throw GradeTooLowException();
@@ -46,4 +46,14 @@ std::ostream& operator<<(std::ostream& out, const Form& object)
     << ", form's execute grade: " << object.getExecGrade()
     << ", form's sign grade: " << object.getSignGrade();
 	return (out);
-}   
+}
+
+const char * Form::GradeTooHighException::what() const throw ()
+{
+	return ("Grade is too high");
+}
+
+const char * Form::GradeTooLowException::what() const throw ()
+{
+	return ("Grade is too low");
+}

@@ -1,10 +1,10 @@
 
 # ================================= NAME =================================== #
-NAME		= form
+NAME		= MutantStack
 
 # ================================= FILES =================================== #
 
-SRC			= main.cpp src/Bureaucrat.cpp src/Form.cpp
+SRC			= main.cpp
 
 # ================================ OBJECTS =================================== #
 
@@ -15,7 +15,7 @@ OBJS		= $(addprefix $(OBJDIR), $(SRC:%.cpp=%.o))
 
 CC			= c++
 FLAGS		= -Wall -Wextra -Werror -std=c++98
-INCLUDES	= -Iincludes/
+INCLUDES	= -I.
 RM			= rm -f
 MAKE		= make
 

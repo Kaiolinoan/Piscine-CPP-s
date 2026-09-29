@@ -8,6 +8,8 @@ int main ()
     Bureaucrat bur0("Bob0", 50);
     Form con0("Contract0", 60, 70);
 
+    std::cout << bur0 << "\n";
+
     try
     {
         bur0.signForm(con0);
@@ -18,13 +20,14 @@ int main ()
     }
     
     
-    std::cout << bur0 << "\n";
     std::cout << con0 << "\n";
 
     //--------------LOW----------------
     std::cout << "--------------LOW----------------" << "\n";
     Bureaucrat bur1("Bob1", 50);
     Form con1("Contract1", 10, 20);
+
+    std::cout << bur1 << "\n";
 
     try
     {
@@ -35,10 +38,9 @@ int main ()
         std::cerr << e.what() << '\n';
     }
     
-    std::cout << bur1 << "\n";
     std::cout << con1 << "\n";
 
-    //--------------BUREAU HIGH----------------
+    //--------------BUREAUCRAT HIGH----------------
     std::cout << "-------------- BUREAU HIGH----------------" << "\n";
 
     try
@@ -50,7 +52,7 @@ int main ()
         std::cerr << e.what() << '\n';
     }
 
-    //--------------BUREAU LOW----------------
+    //--------------BUREAUCRAT LOW----------------
     std::cout << "-------------- BUREAU LOW ----------------" << "\n";
 
     try

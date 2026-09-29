@@ -3,14 +3,12 @@
 #include <iostream>
 
 template <typename T>
-T easyfind(T t_param, int int_param)
+int easyfind(T t_param, int int_param)
 {
-    int i = 0;
-    while (t_param[i])
+    for (typename T::iterator it = t_param.begin(); it != t_param.end(); it++)
     {
-        if (t_param[i] == int_param)
-            return (t_param[i]);
-        i++;
+        if (*it == int_param)
+            return (*it);
     }
     return (-1);
 }

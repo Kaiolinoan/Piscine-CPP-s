@@ -17,14 +17,14 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)
 {
 	if (this != &other)
 	{
-		this->_grade = other.get_grade();
+		this->_grade = other.getGrade();
 	}
 	return (*this);
 };
 
-std::string Bureaucrat::get_name() const { return (this->_name); }
+std::string Bureaucrat::getName() const { return (this->_name); }
 
-int         Bureaucrat::get_grade() const { return (this->_grade); }
+int         Bureaucrat::getGrade() const { return (this->_grade); }
 
 Bureaucrat& Bureaucrat::operator++()
 {
@@ -46,6 +46,16 @@ Bureaucrat& Bureaucrat::operator--()
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& object)
 {
-	out << object.get_name() << ", bureaucrat grade " << object.get_grade() << "\n";
+	out << object.getName() << ", bureaucrat grade " << object.getGrade() << "\n";
 	return (out);
+}
+
+const char * Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return ("Grade is Too High\n");
+}
+
+const char * Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return ("Grade is Too Low\n");
 }

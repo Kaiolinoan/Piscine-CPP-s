@@ -17,6 +17,8 @@ int main ()
     form2 = intern1.makeForm("presidential pardon", "Jason");
     form3 = intern1.makeForm("shrubbery creation", "Home");
 
+    // ADICIONAR CASOS ONDE DAO TRIGGER DA EXCEPTION
+
     //--------------RobotomyRequestForm----------------
     if (form1)
     {

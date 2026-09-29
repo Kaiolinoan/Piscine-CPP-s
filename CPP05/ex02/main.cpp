@@ -27,7 +27,7 @@ int main ()
         std::cout << "\n--------------PresidentialPardonForm LOW----------------" << "\n\n";
         AForm *pres = new PresidentialPardonForm("Ze");
         Bureaucrat bur1("bur1", 149);
-        bur1.signForm(*pres);
+        bur1.signForm(*pres); //erro aqui
         bur1.executeForm(*pres);
         delete pres;
     }
