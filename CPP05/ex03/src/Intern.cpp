@@ -5,6 +5,10 @@
 
 Intern::~Intern() {};
 
+Intern::Intern(const Intern& other) { (void) other; };
+
+Intern& Intern::operator=(const Intern& other) { (void) other; return *this; };
+
 Intern::Intern() {};
 
 AForm* Intern::createRobotomy(const std::string& target)

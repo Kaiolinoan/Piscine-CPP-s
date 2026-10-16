@@ -30,11 +30,11 @@ class Bureaucrat
     void        executeForm(AForm const & form) const;
 
     //EXCEPTIONS
-    class GradeTooHighException : std::exception
+    class GradeTooHighException : public std::exception
     {
         virtual const char * what() const throw();
     };
-    class GradeTooLowException : std::exception
+    class GradeTooLowException : public std::exception
     {
         virtual const char * what() const throw();
     };

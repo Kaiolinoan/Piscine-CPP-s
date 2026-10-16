@@ -31,15 +31,15 @@ class AForm
         bool         getSigned() const;
 
         //EXCEPTIONS
-        class FormNotSignedException : std::exception
+        class FormNotSignedException : public std::exception
         {
             virtual const char * what() const throw();
         };
-        class GradeTooHighException : std::exception
+        class GradeTooHighException : public std::exception
         {
             virtual const char * what() const throw();
         };
-        class GradeTooLowException : std::exception
+        class GradeTooLowException : public std::exception
         {
             virtual const char * what() const throw();
         };

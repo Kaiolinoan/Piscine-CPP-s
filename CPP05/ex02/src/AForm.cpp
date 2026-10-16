@@ -16,6 +16,17 @@ AForm::AForm(const std::string &name, int ExecGrade, int SignGrade)
 		throw GradeTooHighException();
 };
 
+AForm::AForm(const AForm& other) : _name(other._name), _signGrade(other._signGrade), _execGrade(other._execGrade), _signed(other._signed) {};
+
+AForm& AForm::operator=(const AForm& other)
+{
+	if (this != &other)
+	{
+		this->_signed = other.getSigned();
+	}
+	return (*this);
+}
+
 std::string AForm::getName() const { return (this->_name); };
 
 bool AForm::getSigned() const { return (this->_signed); };

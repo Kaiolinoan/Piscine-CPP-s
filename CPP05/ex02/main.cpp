@@ -26,8 +26,8 @@ int main ()
         //--------------PresidentialPardonForm LOW----------------
         std::cout << "\n--------------PresidentialPardonForm LOW----------------" << "\n\n";
         AForm *pres = new PresidentialPardonForm("Ze");
-        Bureaucrat bur1("bur1", 149);
-        bur1.signForm(*pres); //erro aqui
+        Bureaucrat bur1("bur1", 10);
+        bur1.signForm(*pres);
         bur1.executeForm(*pres);
         delete pres;
     }
@@ -70,7 +70,7 @@ int main ()
         //--------------RobotomyRequestForm LOW----------------
         std::cout << "\n--------------RobotomyRequestForm LOW----------------" << "\n\n";
         AForm *robot = new RobotomyRequestForm("Robo");
-        Bureaucrat bur1("bur1", 149);
+        Bureaucrat bur1("bur1", 50);
         bur1.signForm(*robot);
         bur1.executeForm(*robot);
         delete robot;
@@ -114,7 +114,7 @@ int main ()
         //--------------ShrubberyCreationForm LOW----------------
         std::cout << "\n--------------ShrubberyCreationForm LOW----------------" << "\n\n";
         AForm *shru = new ShrubberyCreationForm("Berry");
-        Bureaucrat bur1("bur1", 149);
+        Bureaucrat bur1("bur1", 140);
         bur1.signForm(*shru);
         bur1.executeForm(*shru);
         delete shru;

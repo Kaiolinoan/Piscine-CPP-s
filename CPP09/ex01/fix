@@ -1,0 +1,8 @@
+./RPN "5 0 /"
+res: 0
+➜  ex01 git:(main) ✗ ./RPN "5       6+"
+Error: Expression can not end with a number
+
+
+
+verificar se tenho de dar parsing para quando tem 2 operators juntos ex: 1 2 3 +* 4 +
