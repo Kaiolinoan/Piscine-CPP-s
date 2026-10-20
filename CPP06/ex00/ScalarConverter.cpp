@@ -66,6 +66,7 @@ void ScalarConverter::convert(const std::string& input)
     if (checkSpecialNumbers(input) || checkSingleChar(input))
         return ;
     char *checker = NULL;
+    int int_flag = false;
     double d= strtod(input.c_str(), &checker);
     if (checker == input.c_str())
     {
@@ -80,6 +81,8 @@ void ScalarConverter::convert(const std::string& input)
             return ;
         }
     }
+    if (d <std::numeric_limits<int>::min() || d  > std::numeric_limits<int>::max())
+        int_flag = true;
     char c = static_cast<char>(d);
     int i = static_cast<int>(d);
     float f = static_cast<float>(d);
@@ -92,7 +95,10 @@ void ScalarConverter::convert(const std::string& input)
         else
            std::cout << "char: Non displayable\n";
     }
-    std::cout << "int: " << i << "\n";
+    if (int_flag)
+        std::cout << "int: impossible\n";
+    else
+        std::cout << "int: " << i << "\n";
     std::cout << std::fixed;
     std::cout.precision(1);
     std::cout << "float: " << f << "f\n"; 
