@@ -3,7 +3,7 @@
 
 typedef struct S_Data
 {
-    int a;
+    int value;
 }   Data;
 
 #endif

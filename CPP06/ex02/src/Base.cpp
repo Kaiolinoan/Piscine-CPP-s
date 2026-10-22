@@ -4,7 +4,6 @@ Base::~Base() {}
 
 Base* generate()
 {
-
     int num = rand() % 3;
     if (num == 0)
         return (new A());
@@ -16,6 +15,7 @@ Base* generate()
 
 void identify(Base* p) 
 {
+    std::cout << "Pointer: ";
     if (dynamic_cast<A*>(p))
         std::cout << "A\n";
     else if (dynamic_cast<B*>(p))
@@ -26,9 +26,13 @@ void identify(Base* p)
 
 void identify(Base& p) 
 {
+    std::cout << "Reference: ";
+
     try
     {
-        dynamic_cast<A&>(p);
+        A& a = dynamic_cast<A&>(p);
+
+        (void) a;
         std::cout << "A\n";
         return;
     }
@@ -36,7 +40,9 @@ void identify(Base& p)
     
     try
     {
-        dynamic_cast<B&>(p);
+        B& b = dynamic_cast<B&>(p);
+
+        (void) b;
         std::cout << "B\n";
         return;
     }
@@ -44,7 +50,9 @@ void identify(Base& p)
     
     try
     {
-        dynamic_cast<C&>(p);
+        C& c = dynamic_cast<C&>(p);
+
+        (void) c;
         std::cout << "C\n";
         return;
     }

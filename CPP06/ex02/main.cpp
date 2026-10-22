@@ -6,6 +6,9 @@ int  main()
 
     Base* item = generate();
 
+    if (!item)
+        return 1;
+
     Base& item_ref = *item; 
     identify(item);
     identify(item_ref);
