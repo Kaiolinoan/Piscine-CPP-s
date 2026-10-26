@@ -1,4 +1,3 @@
-
 template <typename T>
 Array<T>::Array() : arr(NULL), len(0) {};
 
@@ -75,3 +74,8 @@ unsigned int Array<T>::size() const
     return (this->len);
 }
 
+template<typename T>
+const char* Array<T>::InvalidIndex::what() const throw()
+{
+    return ("Invalid Index.");
+}
