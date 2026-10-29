@@ -43,9 +43,13 @@ int Span::longestSpan()
     if (numbers.size() <= 1)
         throw EmptySpan();
 
-    std::vector<int>::iterator min = std::min_element(numbers.begin(), numbers.end());
-    std::vector<int>::iterator max = std::max_element(numbers.begin(), numbers.end());
-    return (*max - *min);
+    long long min = *std::min_element(numbers.begin(), numbers.end());
+    long long max = *std::max_element(numbers.begin(), numbers.end());
+    long long res = max - min;
+
+    if (res > std::numeric_limits<int>::max())
+        throw std::overflow_error("Span does not fit in int");
+    return (res);
 }
 
 int Span::shortestSpan()
@@ -61,10 +65,21 @@ int Span::shortestSpan()
     {
         if ((it + 1) != copy.end())
         {
-            int val = *(it + 1) - *it;
-            storage.push_back(val);
+            long long val = static_cast<long long>(*(it + 1)) - static_cast<long long>(*it);
+            if (val > std::numeric_limits<int>::max())
+                throw std::overflow_error("Span does not fit in int");
+            storage.push_back(static_cast<int>(val));
         }
     }
     std::vector<int>::iterator min = std::min_element(storage.begin(), storage.end());
     return (*min);
+}
+
+const char * Span::EmptySpan::what() const throw()
+{
+    return ("Span is empty!");
+}
+const char * Span::FullSpan::what() const throw()
+{
+    return ("Span is full!");
 }

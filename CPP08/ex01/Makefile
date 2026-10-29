@@ -4,7 +4,7 @@ NAME		= Span
 
 # ================================= FILES =================================== #
 
-SRC			= main.cpp src/Span.cpp src/FullSpanException.cpp src/EmptySpanException.cpp
+SRC			= main.cpp src/Span.cpp
 
 # ================================ OBJECTS =================================== #
 

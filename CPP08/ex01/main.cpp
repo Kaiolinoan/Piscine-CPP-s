@@ -1,6 +1,7 @@
 #include "Span.hpp"
 #include <iostream>
 #include <ctime>
+#include <climits>
 int main()
 {
     std::srand(std::time(NULL));
@@ -80,6 +81,29 @@ int main()
     catch(std::exception &e)
     {
         std::cout << e.what() << std::endl;
+    }
+
+    std::cout << "======== INTEGER BOUNDARY TEST =========\n";
+    Span boundary(2);
+    boundary.addNumber(INT_MIN);
+    boundary.addNumber(INT_MAX);
+
+    try
+    {
+        std::cout << "Longest span is: " << boundary.longestSpan() << "\n";
+    }
+    catch(std::exception &e)
+    {
+        std::cout << "Longest span caught: " << e.what() << std::endl;
+    }
+
+    try
+    {
+        std::cout << "Shortest span is: " << boundary.shortestSpan() << "\n";
+    }
+    catch(std::exception &e)
+    {
+        std::cout << "Shortest span caught: " << e.what() << std::endl;
     }
 
     try
